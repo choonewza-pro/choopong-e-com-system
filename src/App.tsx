@@ -22,6 +22,7 @@ function App() {
           <li>Add login page</li>
           <li>Update label cart button</li>
           <li>add grid ui</li>
+          <li>fix bug not display name</li>
         </ul>
       </div>
     </>
