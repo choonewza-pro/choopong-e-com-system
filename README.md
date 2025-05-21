@@ -35,3 +35,15 @@ git push -u origin update-label-cart-button
 git checkout main
 git pull
 ```
+
+## แสดง Branches ทั้งหมดในเครื่อง
+
+```bash
+git branch -a
+```
+
+## ลบ Branches ทั้งหมดในเครื่อง
+
+```bash
+git branch -D update-label-cart-button
+```
