@@ -21,6 +21,7 @@ function App() {
         <ul>
           <li>Add login page</li>
           <li>Update label cart button</li>
+          <li>add grid ui</li>
         </ul>
       </div>
     </>
