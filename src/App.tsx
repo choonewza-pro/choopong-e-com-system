@@ -21,6 +21,7 @@ function App() {
           <li>add grid ui</li>
           <li>fix bug not display name</li>
           <li>CEC-13-display-the-receipt-on-the-order-summary-page</li>
+          <li>CEC-10-create-the-payment-form</li>
         </ol>
       </div>
     </>
