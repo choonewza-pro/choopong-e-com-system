@@ -23,6 +23,9 @@ function App() {
           <li>CEC-13-display-the-receipt-on-the-order-summary-page</li>
           <li>CEC-10-create-the-payment-form</li>
         </ol>
+        <ol>
+          <li>PO : Create login form</li>
+        </ol>
       </div>
     </>
   )
