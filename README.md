@@ -39,6 +39,7 @@ git pull
 ## แสดง Branches ทั้งหมดในเครื่อง
 
 ```bash
+git branch
 git branch -a
 ```
 
