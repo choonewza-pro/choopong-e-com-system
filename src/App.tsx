@@ -15,12 +15,13 @@ function App() {
       </div>
       <h1>E-Com System 1.0.0</h1>
       <div>
-        <ul>
+        <ol>
           <li>Add login page</li>
           <li>Update label cart button</li>
           <li>add grid ui</li>
           <li>fix bug not display name</li>
-        </ul>
+          <li>CEC-13-display-the-receipt-on-the-order-summary-page</li>
+        </ol>
       </div>
     </>
   )
