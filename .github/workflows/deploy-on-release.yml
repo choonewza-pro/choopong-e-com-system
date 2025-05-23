@@ -1,49 +1,28 @@
-name: Deploy to Production on Release # ชื่อเวิร์กโฟลว์: ดีพลอยไปยัง Production เมื่อมีการ Release
+name: Deploy to Production on Release
 
 on:
-  release:
-    types: [created] # ทริกเกอร์เมื่อมีการสร้าง Release
+    release:
+        types: [created]
 
 permissions:
-  pages: write # อนุญาตให้เขียนลง GitHub Pages
-  deployments: write # อนุญาตให้เขียนข้อมูลการดีพลอย (ไม่จำเป็นเสมอไปสำหรับ Pages แต่ไม่เป็นอันตราย)
-  id-token: write # จำเป็นสำหรับการตรวจสอบสิทธิ์ OIDC
+    pages: write
+    deployments: write
+    id-token: write
 
 jobs:
-  deploy:
-    if: ${{ github.event.release.target_commitish == 'production' }} 
-    # เงื่อนไข: ดีพลอยเฉพาะเมื่อ Release มุ่งเป้าไปที่ branch 'production'
-    runs-on: ubuntu-latest # รันบนระบบปฏิบัติการ Ubuntu ล่าสุด
-    environment: # กำหนด environment สำหรับ GitHub Pages
-      name: github-pages # ชื่อ environment
-      url: ${{ steps.deployment.outputs.page_url }} # URL ของเว็บไซต์ที่ถูกดีพลอย จะถูกส่งออกที่นี่
-    steps:
-      - name: Checkout repository # ขั้นตอน: ดึงโค้ดจาก repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js # ขั้นตอน: ติดตั้ง Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22" # ใช้ Node.js เวอร์ชัน 22
-          cache: npm # แคช npm เพื่อความเร็ว
-
-      - name: Install dependencies # ขั้นตอน: ติดตั้ง dependencies
-        run: npm ci
-
-      - name: Build project # ขั้นตอน: สร้างโปรเจกต์
-        run: npm run build
-
-      # แอ็กชัน configure-pages มักใช้สำหรับการตั้งค่า base URL เป็นต้น
-      # แต่ไม่จำเป็นเสมอไปสำหรับการดีพลอยพื้นฐาน เว้นแต่คุณมีความต้องการเฉพาะ
-      # ถ้า output ของ build ของคุณถูกกำหนดค่าไว้สำหรับ root แล้ว คุณอาจไม่ต้องการสิ่งนี้
-      - name: Configure GitHub Pages # ขั้นตอน: กำหนดค่า GitHub Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact # ขั้นตอน: อัปโหลด artifact สำหรับ Pages
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist # ตรวจสอบให้แน่ใจว่า 'dist' คือไดเรกทอรีที่ถูกต้องที่เก็บ output ของการ build ของคุณ
-
-      - name: Deploy to GitHub Pages # ขั้นตอน: ดีพลอยไปยัง GitHub Pages
-        id: deployment # กำหนด ID ให้กับขั้นตอนนี้ เพื่อใช้อ้างอิง output เช่น page_url
-        uses: actions/deploy-pages@v4 # แอ็กชันสำหรับดีพลอย GitHub Pages
+    deploy:
+        if: ${{ github.event.release.target_commitish == 'production' }}
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                node-version: '22'
+                cache: npm
+            - run: npm ci
+            - run: npm run build
+            - uses: actions/configure-pages@v5
+            - uses: actions/upload-pages-artifact@v3
+              with:
+                path: dist
+            - uses: uses actions/deploy-pages@v4
