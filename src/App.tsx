@@ -13,7 +13,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>E-Com System 9.0.0</h1>
+      <h1>E-Com System 9.0.1</h1>
       <div>
         <ol>
           <li>Add login page</li>
