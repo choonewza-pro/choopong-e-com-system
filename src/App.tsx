@@ -27,14 +27,10 @@ function App() {
           <li>PO : Create login form</li>
         </ol>
       </div>
-
-
-
-
-      
       <div>
         <ol>
           <li>DEV : Create login api</li>
+          <li>BUG : 101</li>
         </ol>
       </div>
     </>
