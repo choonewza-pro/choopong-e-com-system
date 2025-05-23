@@ -31,6 +31,7 @@ function App() {
         <ol>
           <li>DEV : Create login api</li>
           <li>BUG : 101</li>
+          <li>BUG : 201</li>
         </ol>
       </div>
     </>
