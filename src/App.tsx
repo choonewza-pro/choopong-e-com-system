@@ -3,7 +3,6 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
 function App() {
-  const c = 1 =;
   return (
     <>
       <div>
