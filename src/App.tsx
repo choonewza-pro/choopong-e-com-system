@@ -13,7 +13,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>E-Com System 1.0.0</h1>
+      <h1>E-Com System 8.0.0</h1>
       <div>
         <ol>
           <li>Add login page</li>
@@ -27,14 +27,12 @@ function App() {
           <li>PO : Create login form</li>
         </ol>
       </div>
-
-
-
-
-      
       <div>
         <ol>
           <li>DEV : Create login api</li>
+          <li>BUG : 101</li>
+          <li>BUG : 201</li>
+          <li>BUG : 301</li>
         </ol>
       </div>
     </>
