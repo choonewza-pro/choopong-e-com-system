@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
 function App() {
+  const c = 1 =;
   return (
     <>
       <div>
@@ -31,6 +32,7 @@ function App() {
         <ol>
           <li>DEV : Create login api</li>
           <li>BUG : 101</li>
+          <li>BUG : 201</li>
         </ol>
       </div>
     </>
